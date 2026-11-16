@@ -5,6 +5,10 @@ on:
     tags:
       - "*"
 
+permissions:
+  contents: read
+  packages: write
+
 jobs:
   docker:
     runs-on: ubuntu-latest
@@ -29,4 +33,4 @@ jobs:
         with:
           push: true
           platforms: linux/amd64
-          tags: ghcr.io/nibiruchain/installer:latest,ghcr.io/nibiruchain/installer:${{ steps.get_version.outputs.version-without-v }}
+          tags: ghcr.io/saidotfun/installer:latest,ghcr.io/saidotfun/installer:${{ steps.get_version.outputs.version-without-v }}
